@@ -1,0 +1,21 @@
+version: '3.0'
+services:
+  db:
+    container_name: pg_container
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: shipment
+      POSTGRES_PASSWORD: shipment
+      POSTGRES_DB: shipmentdb
+    ports:
+      - "5432:5432"
+  pgadmin:
+    container_name: pgadmin5_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5051:80"

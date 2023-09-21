@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "de1139c9-c6d1-4349-9280-77c464b24e05",
+		"name": "Shipment-System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create shipment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n     \"source\":\"delhi\",\r\n     \"destination\":\"bangalore\",\r\n     \"weight\":\"20\",\r\n     \"dimension\":{\r\n         \"length\":\"2\",\r\n         \"weight\":\"5\",\r\n         \"height\":\"4\"\r\n\r\n }\r\n \r\n }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/shipment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"shipment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Load Assignment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n     \"source\":\"delhi\",\r\n     \"destination\":\"bangalore\",\r\n     \"weight\":\"20\",\r\n     \"dimension\":{\r\n         \"length\":\"2\",\r\n         \"weight\":\"5\",\r\n         \"height\":\"4\"\r\n\r\n }\r\n \r\n }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/load-assignment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"load-assignment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve_loded_shipment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n     \"source\":\"delhi\",\r\n     \"destination\":\"bangalore\",\r\n     \"weight\":\"20\",\r\n     \"dimension\":{\r\n         \"length\":\"2\",\r\n         \"weight\":\"5\",\r\n         \"height\":\"4\"\r\n\r\n }\r\n \r\n }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/getshipment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getshipment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create transport",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n \r\n \"capacity\":\"20\",\r\n \"currentLoad\":\"0\",\r\n \"dimension\":{\r\n         \"length\":\"2\",\r\n         \"weight\":\"5\",\r\n         \"height\":\"4\"\r\n     }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/transport",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transport"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

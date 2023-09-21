@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/001-create-shipment-table.sql
+  - include:
+      file: db/changelog/001-create-transport-table.sql
+  - include:
+      file: db/changelog/001-create-load-shipment-table.sql

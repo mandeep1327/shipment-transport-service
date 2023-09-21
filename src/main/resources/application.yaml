@@ -1,0 +1,41 @@
+POSTGRES_DB_URL: jdbc:postgresql://localhost:5432/booking_events
+POSTGRES_USERNAME: booking_events
+POSTGRES_DB_PASSWORD: test
+POSTGRES_R2DBC_URL: r2dbc:pool:postgresql://localhost:5432/booking_events
+POSTGRES_R2DBC_USERNAME: booking_events
+POSTGRES_R2DBC_PASSWORD: test
+LIQUIBASE_ENABLED: true
+LIQUIBASE_CHANGE_LOG: classpath:db/liquibase-change.yaml
+ENABLE_H2: true
+server:
+  port: 8080
+  shutdown: graceful
+spring:              #In-Memory Database Configuration for local
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  h2:
+    console:
+      enabled: ${ENABLE_H2}
+  datasource:
+    url: ${POSTGRES_DB_URL}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_DB_PASSWORD}
+  r2dbc:
+    url: ${POSTGRES_R2DBC_URL}
+    username: ${POSTGRES_R2DBC_USERNAME}
+    password: ${POSTGRES_R2DBC_PASSWORD}
+  liquibase:
+    enabled: ${LIQUIBASE_ENABLED}
+    change-log: ${LIQUIBASE_CHANGE_LOG}
+  main:
+    banner-mode: CONSOLE
+  banner:
+    location: banner.txt
+  jackson:
+    default-property-inclusion: non_null
+  application:
+    name: shipment-loading-service

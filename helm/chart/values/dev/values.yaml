@@ -1,0 +1,23 @@
+appName: shipment-loading-service
+replicaCount: 1
+spring:
+  datasource:
+    url: r2dbc:pool:postgresql://localhost:5432/shipmentdb
+    username: shipment
+    password: shipment
+  r2dbc:
+    url: jdbc:postgresql://localhost:5432/shipmentdb
+    username: shipment
+    password: shipment
+    properties:
+      sslMode: REQUIRE
+  liquibase:
+    enabled: true
+    change-log: classpath:db/liquibase-change.yaml
+resources:
+  requests:
+    memory: 1Gi
+    cpu: 1000m
+  limits:
+    memory: 2Gi
+    cpu: 1000m
